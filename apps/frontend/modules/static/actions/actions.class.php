@@ -17,6 +17,23 @@ class staticActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+  }
+  public function executeServicios(sfWebRequest $request)
+  {
+  }
+  public function executeCorretaje(sfWebRequest $request)
+  {
+  }
+  public function executeQuienessomos(sfWebRequest $request)
+  {
+  }
+  public function executeDondeestamos(sfWebRequest $request)
+  {
+  }
+  public function executeContacto(sfWebRequest $request)
+  {
+  }
+  public function executeError404(sfWebRequest $request)
+  {
   }
 }
