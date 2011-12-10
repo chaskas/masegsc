@@ -20,6 +20,10 @@ corretaje:
 contacto:
   url:  /contacto
   param: { module: static, action: contacto }
+  
+sendmail:
+  url: /sendmail
+  param: { module: static, action: sendmail }
 
 # default rules
 homepage:

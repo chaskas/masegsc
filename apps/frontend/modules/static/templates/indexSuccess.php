@@ -5,7 +5,7 @@
     <img src="./images/slides/3.jpg" alt="" title="#htmlcaption3" />
     <img src="./images/slides/4.jpg" alt="" title="#htmlcaption4" />
   </div>
-  <div id="htmlcaption1" class="nivo-html-caption">
+  <div id="htmlcaption1" class="nivo-html-caption" style="width: 25% !important;">
     <h3>Hola!</h3>
     <br/>
     <br/>

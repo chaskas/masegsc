@@ -32,8 +32,34 @@ class staticActions extends sfActions
   }
   public function executeContacto(sfWebRequest $request)
   {
+    $this->form = new ContactForm();
   }
   public function executeError404(sfWebRequest $request)
   {
+  }
+  public function executeSendmail(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod('POST'));
+
+    $name     = $request->getParameter('name');
+    $email    = $request->getParameter('email');
+    $phone  = $request->getParameter('phone');
+    $pre_message  = $request->getParameter('message');
+
+    $message = "Don(a): ".$name."\nCorreo: ".$email."\nFono: ".$phone."\n\nEscribió:\n\n".$pre_message."\n\n\n\nNO RESPONDER A ESTE CORREO\n(notreply@mielycanela.cl)";
+
+    $mensaje = Swift_Message::newInstance()
+      ->setFrom(array('notreply@masegsc.cl' => 'Contacto MASEG'))
+      ->setTo(array('contacto@masegsc.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
+      ->setBcc(array('admin@webdevel.cl'))
+      ->setSubject('Nuevo mensaje desde www.masegsc.cl')
+      ->setBody($message)
+    ;
+
+    $this->getMailer()->send($mensaje);
+
+    $this->getResponse()->setContent('El mensaje ha sido enviado satisfactoriamente...');
+
+    return sfView::NONE;
   }
 }

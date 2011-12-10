@@ -319,6 +319,10 @@ clear:both;
 .nivo-html-caption {
     display:none;
 }
+.nivo-html-caption2 {
+    display:none;
+    width: 25% !important;
+}
 /* Direction nav styles (e.g. Next & Prev) */
 .nivo-directionNav a {
 	position:absolute;

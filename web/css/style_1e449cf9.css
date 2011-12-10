@@ -298,6 +298,16 @@ clear:both;
 	height:100%;
 	z-index:89;
 }
+.nivo-caption {
+	position:absolute;
+	left:0px;
+	top:0px;
+	background:#de5328;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:29%;
+	height:100%;
+	z-index:89;
+}
 .nivo-caption p {
 	padding:10px 10px;
 	margin:0;

@@ -1,3 +1,4 @@
+<?php use_javascript('sendmail.js'); ?>
 <div class="container_gamma breadcrumbs">
   <p><span>&raquo;</span><a href="<?php echo url_for('@homepage'); ?>">Home</a><span>&raquo;</span><a href="<?php echo url_for('static/contacto'); ?>">Contacto</a></p>
 </div>
@@ -24,15 +25,24 @@
       Talcahuano
     </p>
   </div>
-  <div class="gs_9 omega"><h3>Formulario de Contacto</h3>
+  <div class="gs_9 omega">
+    
+    <h3>Formulario de Contacto</h3>
     <!-- Contact form starts -->
-    <form method="post" action="#" />
-    <div id="form_container">		
+    <form method="post" action="<?php echo url_for('static/sendmail') ?>" id="form-send">
+    <div id="sendmail"></div>
+    <div id="form_container">
       <div id="form_main">
-        <input type="text" name="name" id="name" value="Nombre" title="Nombre" />
-        <input type="text" name="email" id="email" value="Email" title="Email" />
-        <textarea name="comments" id="comments" rows="4" cols="4" value="Texto" placeholder="Texto"></textarea>
-        <p><input type="button" name="submit" id="submit" value="Enviar!" class="superbutton" /></p>
+<!--        <input type="text" name="name" id="name" value="Nombre" title="Nombre" />-->
+        <?php echo $form['name']->render(array('value'=>'Nombre','title'=>'Nombre')); ?>
+        
+<!--        <input type="text" name="email" id="email" value="Email" title="Email" />-->
+        <?php echo $form['email']->render(array('value'=>'Email','title'=>'Email')); ?>
+        
+<!--        <textarea name="comments" id="comments" rows="4" cols="4" value="Texto" placeholder="Texto"></textarea>-->
+        <?php echo $form['message']->render(array('value'=>'Texto','title'=>'Texto','placeholder'=>'Texto','rows'=>4,'cols'=>4)); ?>
+        
+        <p><input type="submit" name="submit" id="form-submit" value="Enviar!" class="superbutton" /></p>
         <ul id="form_response"><li></li></ul>
       </div>
     </div>
